@@ -1,0 +1,8 @@
+<div ng-controller="loginController" class="form-group">
+  <form >
+  <input  class="form-control" type="text" placeholder="User Name" id="userName" ng-model="userName" style="width: 30%;margin-left: 35%;margin-top: 10%;"/><br/>
+  <input   class="form-control" type="password" placeholder="Password" ng-model="password" style="width: 30%;margin-left: 35%;"/><br/>
+  <input id="loginButton" class="btn btn-primary" type="submit" value="Login" ng-click="login()" style="margin-left: 35%;width: 30%"/>
+  <img  id="univsalLoading" alt="" src="img/loading.gif" style="width: 2%" ng-show="loadingImg"/>
+  </form>
+</div>

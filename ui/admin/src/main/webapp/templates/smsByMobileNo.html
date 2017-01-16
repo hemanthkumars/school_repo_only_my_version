@@ -1,0 +1,20 @@
+<div ng-controller="smsByMobileNoCtrl">
+<div class="container">
+  <h2>SMS by Mobile Nos</h2>
+  <select class="form-control" ng-model="templateName" id="templateName" ng-options="item as item.smsTemplateName for item in smsTemplates track by item.schoolSmsTemplateId"  style="width: 300px;display: inline-block;" ng-change="findTemplateDetails()">
+            <option value="">--Select Template--</option>
+   </select>
+    <br/>
+  {{header}}<input id="header" type="hidden" value="{{header}}" />
+  <textarea  id="message" onkeyup="calculateSMSCOunt()" class="form-control" style="width: 400px;display: inline-block;height: 100px;" >
+  </textarea>
+  {{footer}}<input id="footer" type="hidden" value="{{footer}}"/>
+  <br/> Sms Count<span id="smsCount"></span><br/>
+  Enter Mobile Nos separated By Comma(s)<br/>
+   <textarea  id="mobileNosForSMSing"  class="form-control" placeholder="10 Digit Mobile Nos Separated by Comma(,)" style="width: 400px;display: inline-block;height: 100px;" >
+  </textarea>
+  <button type="submit"  onclick="sendSms()" id="sendSmsButton" class="btn btn-default" style="width: 100px;display: inline-block;">Send SMS</button>
+ 
+</div>
+</div>
+

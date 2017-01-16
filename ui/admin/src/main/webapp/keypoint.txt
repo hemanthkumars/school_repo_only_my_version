@@ -1,0 +1,27 @@
+1. In purchase page enabling click open on productprice list
+2. In sales page implementing open and save functionality
+3. In tag buyer modal tagging the customer  to invoice raised
+4. In tag buyer modal enabling boltId or mobile number
+5. For Pay later feature enforcing the tagging buyer option and verifying mobile no
+6. Implementing MyAccount
+7. Seeing the Invoices by Filter
+8. InvoiceProduct Table adding all the columns of ProductPrice Table
+9. Quantity synchronization after raising Bill . all the transactional flaws to be covered
+   Adding rowlock column in Product Table .This column will taken for transactional writing
+   all the threads needs to check this column before writing anything to that Row ( Both Product,ProductPrice Table )
+10. Print Bill Needs print the bill
+11. After Invoice is raised SMS and email needs to sent to buyer 
+
+Buyer Project
+
+1. Login Page
+2. Viewing all his Invoice with respective seller names he should be able to print those invoices too 
+3. Dash board he can see summary of Purchases he made
+
+Future scope
+
+ 1. Buyer can have Wallet account where in he can top up is account
+ 2. While buying he can swipe  his wallet ,every swipe can be validated by an OTP
+ 
+   
+    

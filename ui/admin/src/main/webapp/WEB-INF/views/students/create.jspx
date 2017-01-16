@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_school_base_domain_Student" modelAttribute="student" path="/students" render="${empty dependencies}" z="NtRPa3WkYDUao9zcawNDbkdHdCA=">
+        <field:simple field="schoolFees" id="c_com_school_base_domain_Student_schoolFees" messageCode="entity_reference_not_managed" messageCodeAttribute="School Fee" z="4+KCwlf1RXxmW+2Y0+4xoe8zUvM="/>
+        <field:simple field="smss" id="c_com_school_base_domain_Student_smss" messageCode="entity_reference_not_managed" messageCodeAttribute="Sms" z="dbh7uMA/9xwLGDs4chWKHvwtWuE="/>
+        <field:simple field="studentAttedances" id="c_com_school_base_domain_Student_studentAttedances" messageCode="entity_reference_not_managed" messageCodeAttribute="Student Attedance" z="OarL7rY38k+Cwblcls+pwBIeFNk="/>
+        <field:simple field="studentClassHistories" id="c_com_school_base_domain_Student_studentClassHistories" messageCode="entity_reference_not_managed" messageCodeAttribute="Student Class History" z="kSqMhA3+CvoR4MzjRGoaptzJWWQ="/>
+        <field:simple field="studentExaminations" id="c_com_school_base_domain_Student_studentExaminations" messageCode="entity_reference_not_managed" messageCodeAttribute="Student Examination" z="rEe0r8LL5zEJ12ogb2m+XoGrrtA="/>
+        <field:simple field="studentGroups" id="c_com_school_base_domain_Student_studentGroups" messageCode="entity_reference_not_managed" messageCodeAttribute="Student Group" z="A8i5C5WHlr1Wr4ZISDmCEEav6RU="/>
+        <field:simple field="studentLogins" id="c_com_school_base_domain_Student_studentLogins" messageCode="entity_reference_not_managed" messageCodeAttribute="Student Login" z="uvGiBceB1kLqhnr3PwXSX3qgrCI="/>
+        <field:select field="auditUserId" id="c_com_school_base_domain_Student_auditUserId" itemValue="staffId" items="${staffs}" path="/staffs" z="lTpJimmQPiCU1SY6jDK915r/sP8="/>
+        <field:select field="schoolId" id="c_com_school_base_domain_Student_schoolId" itemValue="schoolId" items="${schools}" path="/schools" z="whsOtPHxvqdO14fhYY/e1oBB+xE="/>
+        <field:select field="cityId" id="c_com_school_base_domain_Student_cityId" itemValue="cityId" items="${citys}" path="/citys" z="c9aWFk4u8IIjBgKS4TJ6BpilGQY="/>
+        <field:select field="stateId" id="c_com_school_base_domain_Student_stateId" itemValue="stateId" items="${states}" path="/states" z="djSAAHfdjqOJ3zkl+HvWLHcVyNU="/>
+        <field:select field="countryId" id="c_com_school_base_domain_Student_countryId" itemValue="countryId" items="${countrys}" path="/countrys" z="dZ02jRd2JJrZlxp3L4TjL1yUEjM="/>
+        <field:select field="schoolClassSectionId" id="c_com_school_base_domain_Student_schoolClassSectionId" itemValue="schoolClassSectionId" items="${schoolclasssections}" path="/schoolclasssections" z="1Wsz9GW2yxBdpvCFGMIbk7Usddg="/>
+        <field:select field="genderId" id="c_com_school_base_domain_Student_genderId" itemValue="genderId" items="${genders}" path="/genders" z="GKsun3uMLKC0iyn0Hp1cjYbF2R4="/>
+        <field:select field="bloodGroupId" id="c_com_school_base_domain_Student_bloodGroupId" itemValue="bloodGroupId" items="${bloodgroups}" path="/bloodgroups" z="x6Ie2YacNiyyt6S9VNRtulaKrKg="/>
+        <field:select field="schoolGroupId" id="c_com_school_base_domain_Student_schoolGroupId" itemValue="schoolGroupId" items="${schoolgroups}" path="/schoolgroups" z="d1iDCP8URFmwE3vYD/jozVSPB+I="/>
+        <field:select field="motherTongueId" id="c_com_school_base_domain_Student_motherTongueId" itemValue="languageId" items="${languages}" path="/languages" z="3EM4eaEPruRUEu87VGS3Mmf0UsA="/>
+        <field:select field="casteId" id="c_com_school_base_domain_Student_casteId" itemValue="casteId" items="${castes}" path="/castes" z="oB8So2o4ogFDJ84W9xNHVW2tot8="/>
+        <field:select field="religionId" id="c_com_school_base_domain_Student_religionId" itemValue="religionId" items="${religions}" path="/religions" z="DCXhX6jL8O/1r6qC5CTWKpdyF3g="/>
+        <field:select field="schoolAcademicYearId" id="c_com_school_base_domain_Student_schoolAcademicYearId" itemValue="schoolAcademicYearId" items="${schoolacademics}" path="/schoolacademics" z="jnHIHSoxSGWrdhT5hqzU5/Umv28="/>
+        <field:input field="firstName" id="c_com_school_base_domain_Student_firstName" z="11HkfhoY0J0LZhYzMzW7iOfcwVY="/>
+        <field:input field="middleName" id="c_com_school_base_domain_Student_middleName" z="Kgmul0eFjyUU8JdshyH8HsQuFR8="/>
+        <field:input field="lastName" id="c_com_school_base_domain_Student_lastName" z="MiQ6W3rWeP6FQLFvfei8P3nbTTY="/>
+        <field:input field="initial" id="c_com_school_base_domain_Student_initial" z="B1V4UuQft9wn+42ryNVcqQYtJtc="/>
+        <field:datetime dateTimePattern="${student_dob_date_format}" field="dob" id="c_com_school_base_domain_Student_dob" z="Ad++WPo+dCXKxPF1TcGD4v8+rjw="/>
+        <field:datetime dateTimePattern="${student_admissiondate_date_format}" field="admissionDate" id="c_com_school_base_domain_Student_admissionDate" z="V4cPPyn0d3G0Urclviq5xiu+mfc="/>
+        <field:input field="admissionNo" id="c_com_school_base_domain_Student_admissionNo" z="SepcMccmJAPY0LtAzRyJMkufLBo="/>
+        <field:input field="studentPhotoUrl" id="c_com_school_base_domain_Student_studentPhotoUrl" z="53IqEiCgYKBcKiYRUi+Hyi8tK8Q="/>
+        <field:input field="identificationMark" id="c_com_school_base_domain_Student_identificationMark" z="3E250oNkoRc8/H6LDJyC2MobQXY="/>
+        <field:input field="fatherName" id="c_com_school_base_domain_Student_fatherName" z="Dvc4vZlPsQveLTBIedsVM21xU+Q="/>
+        <field:input field="motherName" id="c_com_school_base_domain_Student_motherName" z="ZzOOHZBbSM665obMJDetGPXBwEY="/>
+        <field:input field="fatherOccupation" id="c_com_school_base_domain_Student_fatherOccupation" z="h3kQi6DLs5B8ZINHYVa95g0WhLI="/>
+        <field:input field="motherOccupation" id="c_com_school_base_domain_Student_motherOccupation" z="BIXyZ1wqNwanGpfSSylxtdOO3H4="/>
+        <field:input field="fatherMobile" id="c_com_school_base_domain_Student_fatherMobile" z="/r8jcX7Tuy+WV4djasa2onb33Dw="/>
+        <field:input field="motherMobile" id="c_com_school_base_domain_Student_motherMobile" z="WTGrXMkyPTAU2aMI4mO2UpPZQT8="/>
+        <field:input field="fatherEmail" id="c_com_school_base_domain_Student_fatherEmail" z="gUv92PvF2JzMXgTr24zQiz23Umo="/>
+        <field:input field="motherEmail" id="c_com_school_base_domain_Student_motherEmail" z="ZHV2BrN2RmJy+/k3AaxWjuC57TA="/>
+        <field:input field="address" id="c_com_school_base_domain_Student_address" z="C4qL+WHHyzXNqLxCleot02UseWY="/>
+        <field:input field="landmark" id="c_com_school_base_domain_Student_landmark" z="+xhZ3IPki7+TOI7r3KFcjsx69WQ="/>
+        <field:input field="districtId" id="c_com_school_base_domain_Student_districtId" validationMessageCode="field_invalid_integer" z="mhLjuZZk1VEhi5HYpEhMQMc3YCI="/>
+        <field:input field="pincode" id="c_com_school_base_domain_Student_pincode" z="5jHB4Ai5gZUO2IziJozTLGaVFSU="/>
+        <field:input field="username" id="c_com_school_base_domain_Student_username" z="LoBnql4DLAp74rpCSyOgYC14Cvw="/>
+        <field:input field="password" id="c_com_school_base_domain_Student_password" z="H8+ppewMPaZJx1zoCtuAR417LxU="/>
+        <field:datetime dateTimePattern="${student_auditcreateddttime_date_format}" field="auditCreatedDtTime" id="c_com_school_base_domain_Student_auditCreatedDtTime" z="RcqLam413/7AfpWsHF4BDoSAVoM="/>
+        <field:datetime dateTimePattern="${student_auditmodifieddttime_date_format}" field="auditModifiedDtTime" id="c_com_school_base_domain_Student_auditModifiedDtTime" z="HzUTmE3TvP/FeXKM9f9zFjxuW0M="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_school_base_domain_Student" render="${not empty dependencies}" z="kARgyaCiURUnyDOJz8su7zmncD0="/>
+</div>

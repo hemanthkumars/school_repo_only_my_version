@@ -1,0 +1,13 @@
+<div ng-controller="viewFeeCollectionCtrl">
+<div class="container">
+  <h2>View Fee Collection</h2>
+  From Date <input type="text" ng-model="fromDate" id="fromDateFeeCollection" ng-click="resetFeeCollectionViewing1()"  class="form-control"  placeholder="Code" style="width: 180px;display: inline-block;"/>
+  To Date <input type="text" ng-model="toDate" id="toDateFeeCollection"  ng-click="resetFeeCollectionViewing2()" class="form-control"  placeholder="Code" style="width: 180px;display: inline-block;"/>
+   <button type="submit"  ng-click="findFeeCollection()" class="btn btn-default" style="width: 100px;display: inline-block;">Get Details</button>    
+  <h3>Total Fee Amount  : {{totalFeesCollected}} Rs</h3>
+ 
+  <span id="feeCollectionData"></span>
+ 
+</div>
+</div>
+

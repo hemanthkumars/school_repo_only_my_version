@@ -1,0 +1,20 @@
+<div ng-controller="manageClassCtrl">
+<div class="container">
+  <h2>Manage Classes</h2>
+  <select class="form-control"  id="schoolClassId" ng-model="schoolClass" ng-options="item as item.className for item in schoolClasss track by item.schoolClassId" style="width: 200px;display: inline-block;">
+    <option value="">--Select Class--</option>
+  </select>
+ From Section <select class="form-control"  id="startSectionId" ng-model="startSection" ng-options="item as item.section for item in sectionss track by item.sectionId" style="width: 200px;display: inline-block;">
+    <option value="">--Select Session--</option>
+  </select>
+ To Section<select class="form-control"  id="endSectionId" ng-model="endSection" ng-options="item as item.section for item in sectionss track by item.sectionId" style="width: 200px;display: inline-block;">
+    <option value="">--Select Session--</option>
+  </select>
+  <button type="submit"  ng-click="generateSchoolClassSection()" class="btn btn-default" style="width: 100px;display: inline-block;">Generate</button>       
+  <span id="schoolClassSectionData"></span>
+ 
+</div>
+
+
+</div>
+

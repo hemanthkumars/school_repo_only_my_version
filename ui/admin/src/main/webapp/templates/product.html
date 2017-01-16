@@ -1,0 +1,58 @@
+<div ng-controller="productController" style="min-height: 100px;margin-top: 5%;" onloadstart="makeAuto()">
+<div >
+  <div class="form-group">
+    <label class="control-label col-md-2" for="productCode" ></label>
+    <div class="col-md-10">
+      <input type="text" class="form-control" id="productCode" ng-model="productCode" ng-blur="fetchProductFullDetails()" placeholder="Enter Product Code" style="width: 60%;margin-left: 4% ;"/>
+     <!--  <button type="button" class="btn btn-default"  style="display: inline-block;">
+          <span class="glyphicon glyphicon-search">Search</span> 
+        </button> -->
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <button type="submit" class="btn btn-primary"  style="width: 50%;" ng-click="fetchProductFullDetails()">Submit</button>
+    </div>
+  </div> -->
+</div>
+
+<div ng-show="showFullProductDetails" style="margin-left: 5% ;">
+   <label class="control-label col-md-2" ></label>
+   <input   type="text" placeholder="Product Name"   id="productName" ng-model="productName"  style="width: 60%;margin-left: 5px;"/>
+   <label class="control-label col-md-2" ></label>
+   <input  class="form-control" type="text" placeholder="Short Name"  ng-model="productShortName" style="width: 60%"/>
+   <select class="form-control" style="width: 10%;display: inline-block;" ng-options="item as item.uniitName for item in units track by item.unitId" ng-model="unit"  ><option value="" disabled selected> Unit</option></select>
+   <select class="form-control" style="width: 10%;display: inline-block;" ng-options="item as item.brandName for item in brands track by item.brandId" ng-model="brand"  ><option value="" disabled selected> Brand</option></select>
+   <select class="form-control" style="width: 10%;display: inline-block;" ng-options="item as item.productCategory for item in productCategories track by item.productCategoryId" ng-model="productCategory"  ><option value="" disabled selected>Category</option></select>
+    <select class="form-control" style="width: 10%;display: inline-block;" ng-options="item as item.productPrefix for item in productPrefixs track by item.productPrefixId" ng-model="productPrefix"  ><option value="" disabled selected>Prefix</option></select>
+      <select class="form-control" style="width: 10%;display: inline-block;" id="rackId"  ng-model="rackId" ><option value="" disabled selected>Rack No</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option>  </select>
+      
+      
+      
+      <div id="productPricingDetails"  >
+      <div style="display: inline-block;width: auto;">   <br/>
+      <select class="form-control" style="width: 100px;display: inline-block;"  id="tax" ng-model="taxType" > <option value="10"  >VAT</option> </select>   
+      <select class="form-control" style="width: 10%;display: inline-block;"  id="taxPercentage" ng-model="taxPercentage" > <option value="5.5">5.5</option> <option value="14.5">14.5</option> <option value="18">18</option>  </select>
+       <input  class="form-control" type="text" placeholder="Net Cost Price /Unit" ng-keyup="calculatePricing('costPricePerUnit')"  ng-model="costPricePerUnit" style="width: 150px;display: inline-block;"/>X
+        <input  class="form-control" type="text" placeholder="Quantity" ng-keyup="calculatePricing('quantity')"  ng-model="quantity" style="width: 150px;display: inline-block;"/>=
+        <input  class="form-control" type="text" placeholder="Net Cost Price Total" ng-keyup="calculatePricing('totalCostPrice')" ng-model="totalCostPrice" style="width: 150px;display: inline-block;"/>
+       <input  class="form-control" type="text" placeholder="MRP"  ng-model="mrp" style="width: 100px;display: inline-block;"/>
+        <input  class="form-control" type="text" placeholder="Margin %" ng-keyup="calculateSellingPrice()" ng-model="margin" style="width: 100px;display: inline-block;"/>
+         <input  class="form-control" type="text" placeholder="Selling price/Unit" ng-keyup="calculateMargin()"    ng-model="sellingPrice" style="width: 100px;display: inline-block;"/>
+         <input class="form-control"    type="text" id="expiryDate" placeholder="Expiry Date" ng-model="expiryDate"   style="width: 100px;display: inline-block;"/><br/>
+         <input id="loginButton" class="btn btn-primary" type="submit" value="Save" ng-click="saveProduct()" style="margin-left: 8%;width: 100%"/>
+        <img  id="univsalLoading" alt="" src="img/loading.gif" style="width: 2%" ng-show="loadingImg"/>
+      </div>
+    
+      </div>
+      
+      <div id="productPriceDiv">
+      
+      </div>
+       
+       
+      
+</div>
+
+
+</div>

@@ -1,0 +1,18 @@
+<div ng-controller="studentFeeDefnCtrl">
+<div class="container">
+  <h2>Students Fee Definition</h2>
+  Class <input type="text" ng-model="schoolClass" ng-click="resetDataFeeDefn()" id="schoolClass" class="form-control"  placeholder="Start Typing..." style="width: 300px;display: inline-block;"/>
+    <select class="form-control" ng-model="schoolFeeType"  id="schoolFeeType"  ng-options="item as item.feeType for item in feeTypes track by item.schoolFeeTypeId"  style="width: 180px;display: inline-block;">
+            <option value="">--Select Fee Type--</option>
+    </select>
+   Amount <input type="text" ng-model="feeAmount"  id="feeAmount" class="form-control"  placeholder="Enter Fee Amount" style="width: 300px;display: inline-block;"/>
+ 
+  <button type="submit"  onclick="saveFeeDefn()" class="btn btn-default" style="width: 150px;display: inline-block;">Save Fee Definition</button> 
+  <br/>
+  <span id="studentFeeDefnData"></span>
+</div>
+</div>
+
+
+  
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_school_base_domain_Student" object="${student}" path="/students" z="UedO8alG3bCFGnfrmOZTJzXIjDA=">
+        <field:display field="auditUserId" id="s_com_school_base_domain_Student_auditUserId" object="${student}" z="EoFAD3x5PIiGzGOgze32JJd+SFo="/>
+        <field:display field="schoolId" id="s_com_school_base_domain_Student_schoolId" object="${student}" z="XtsYl8kjJnrwqlUyKPCPRN0yQV4="/>
+        <field:display field="cityId" id="s_com_school_base_domain_Student_cityId" object="${student}" z="ZSy5mW88lnzpf1mhvybiA1dYy0k="/>
+        <field:display field="stateId" id="s_com_school_base_domain_Student_stateId" object="${student}" z="Y/PSwlic1IfAT32TG0GG5BSUAnw="/>
+        <field:display field="countryId" id="s_com_school_base_domain_Student_countryId" object="${student}" z="ds8zZA3u4QpkkAnBNXFh9piEIfo="/>
+        <field:display field="schoolClassSectionId" id="s_com_school_base_domain_Student_schoolClassSectionId" object="${student}" z="+T3tLUZeVvn0GrM0rxW592E9KP4="/>
+        <field:display field="genderId" id="s_com_school_base_domain_Student_genderId" object="${student}" z="zp+FRg+nTVLUIqCfgAfI/6rTo48="/>
+        <field:display field="bloodGroupId" id="s_com_school_base_domain_Student_bloodGroupId" object="${student}" z="mbrOgWqAtkrm+9j5L/AHtDZhK2A="/>
+        <field:display field="schoolGroupId" id="s_com_school_base_domain_Student_schoolGroupId" object="${student}" z="ryULzbqC0PSxqGSLTPK/Q39a30Q="/>
+        <field:display field="motherTongueId" id="s_com_school_base_domain_Student_motherTongueId" object="${student}" z="tsm4dqrwtzTKCYrW311Uo/2xIq8="/>
+        <field:display field="casteId" id="s_com_school_base_domain_Student_casteId" object="${student}" z="9dL06DnHdXp97FDV6us7x8ttN1w="/>
+        <field:display field="religionId" id="s_com_school_base_domain_Student_religionId" object="${student}" z="vmYPeuN6WEnXUE5w5zMetJe/HGg="/>
+        <field:display field="schoolAcademicYearId" id="s_com_school_base_domain_Student_schoolAcademicYearId" object="${student}" z="CTpOXO0UOCbykHa+PffnUJrBsfE="/>
+        <field:display field="firstName" id="s_com_school_base_domain_Student_firstName" object="${student}" z="FgBuuCZqfL8/8JK1TK0Lu+gSsxs="/>
+        <field:display field="middleName" id="s_com_school_base_domain_Student_middleName" object="${student}" z="b+U/aJUTAjNqmaYx5wkjNOmVYxA="/>
+        <field:display field="lastName" id="s_com_school_base_domain_Student_lastName" object="${student}" z="N4r+/EJ2W35J1zDFeqP1mUNGp+8="/>
+        <field:display field="initial" id="s_com_school_base_domain_Student_initial" object="${student}" z="/udCbHsieVayugDLz+oANF3JGXs="/>
+        <field:display date="true" dateTimePattern="${student_dob_date_format}" field="dob" id="s_com_school_base_domain_Student_dob" object="${student}" z="ongNzTI7HVUAu/UpWTbwoEkz+D8="/>
+        <field:display date="true" dateTimePattern="${student_admissiondate_date_format}" field="admissionDate" id="s_com_school_base_domain_Student_admissionDate" object="${student}" z="kD+/40x35lg0fv4IrgA6mXeTCfk="/>
+        <field:display field="admissionNo" id="s_com_school_base_domain_Student_admissionNo" object="${student}" z="NwknctaLAHjICTOj2bTZmmYOVO0="/>
+        <field:display field="studentPhotoUrl" id="s_com_school_base_domain_Student_studentPhotoUrl" object="${student}" z="xRr3xhG9ddReXPbEa67p9zH4muI="/>
+        <field:display field="identificationMark" id="s_com_school_base_domain_Student_identificationMark" object="${student}" z="h8jY/IPeEe+AFvyTtikSzT/9dOo="/>
+        <field:display field="fatherName" id="s_com_school_base_domain_Student_fatherName" object="${student}" z="KJQ9LUYzSaEBzlX5vyOtvtTIsaA="/>
+        <field:display field="motherName" id="s_com_school_base_domain_Student_motherName" object="${student}" z="MVO7hTQ9RqU6fNesrCjUoo4BHMY="/>
+        <field:display field="fatherOccupation" id="s_com_school_base_domain_Student_fatherOccupation" object="${student}" z="T4vP+0TTK7TgS3J8ETXlFLBYoWQ="/>
+        <field:display field="motherOccupation" id="s_com_school_base_domain_Student_motherOccupation" object="${student}" z="Gy0zKosAS9pnpWGRdCUBFglJ0dk="/>
+        <field:display field="fatherMobile" id="s_com_school_base_domain_Student_fatherMobile" object="${student}" z="aywBCtBd+jDFGv+QjXs7xflNgHQ="/>
+        <field:display field="motherMobile" id="s_com_school_base_domain_Student_motherMobile" object="${student}" z="0aZTwJaceDMsjZ24NXwHJbsQqwM="/>
+        <field:display field="fatherEmail" id="s_com_school_base_domain_Student_fatherEmail" object="${student}" z="tlKUR+yFOKL1NaVDxl30mOMz6bI="/>
+        <field:display field="motherEmail" id="s_com_school_base_domain_Student_motherEmail" object="${student}" z="lDmFT/BJ/6amr+uJw6ymFji3Iqg="/>
+        <field:display field="address" id="s_com_school_base_domain_Student_address" object="${student}" z="lO1scAvRxkmxmMh2yTuZn9a/mqA="/>
+        <field:display field="landmark" id="s_com_school_base_domain_Student_landmark" object="${student}" z="rhmpRPvlvwgXjMJIk8Wj/vCj1f8="/>
+        <field:display field="districtId" id="s_com_school_base_domain_Student_districtId" object="${student}" z="rdIgWHxWznjTM1P86n+c/MfhlAo="/>
+        <field:display field="pincode" id="s_com_school_base_domain_Student_pincode" object="${student}" z="6HG0ArB3kX8r4SD6Wdsm8zpA42k="/>
+        <field:display field="username" id="s_com_school_base_domain_Student_username" object="${student}" z="gcJB/qY0JZMfxTedVhUYBG49V4U="/>
+        <field:display field="password" id="s_com_school_base_domain_Student_password" object="${student}" z="UIj2wbXzEyHGjF+k+xRuN/9nBXo="/>
+        <field:display calendar="true" dateTimePattern="${student_auditcreateddttime_date_format}" field="auditCreatedDtTime" id="s_com_school_base_domain_Student_auditCreatedDtTime" object="${student}" z="AXRnJ3Jq0Nmk2C/9G2PZzJt8POo="/>
+        <field:display calendar="true" dateTimePattern="${student_auditmodifieddttime_date_format}" field="auditModifiedDtTime" id="s_com_school_base_domain_Student_auditModifiedDtTime" object="${student}" z="LsKKqEjNim1buk//S8LoTOe+LkQ="/>
+    </page:show>
+</div>

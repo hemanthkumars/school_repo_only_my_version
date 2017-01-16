@@ -1,0 +1,13 @@
+<div ng-controller="deliveryReportCtrl">
+<div class="container">
+  <h2>SMS Delivery Report</h2>
+    <input type="text" ng-model="smsSentDate"  ng-click="resetDateForDelivery()" id="smsSentDate" 
+     class="form-control"  placeholder="Enter The date " style="width: 200px;display: inline-block;"/>
+
+  <button type="submit"  ng-click="findDeliveryData()" id="deliveryFetch" class="btn btn-default" style="width: 100px;display: inline-block;">Get Details</button>
+  Total SMS Count : {{totalSms}} Total Cost :{{totalCost}}
+  <span id="smsDeliveryData" ></span>       
+ 
+</div>
+</div>
+

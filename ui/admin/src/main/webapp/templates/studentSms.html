@@ -1,0 +1,22 @@
+<div ng-controller="studentSmsCtrl">
+<div class="container">
+  <h2>Student SMS</h2>
+  <input type="text" ng-model="className"  ng-click="resetClassNameForSms()" id="classNameForSms" class="form-control"  placeholder="Enter Class or Class Section" style="width: 200px;display: inline-block;"/>
+  <select class="form-control" ng-model="templateName" id="templateName" ng-options="item as item.smsTemplateName for item in smsTemplates track by item.schoolSmsTemplateId"  style="width: 300px;display: inline-block;" ng-change="findTemplateDetails()">
+            <option value="">--Select Template--</option>
+   </select>
+    <br/>
+  {{header}}<input id="header" type="hidden" value="{{header}}" />
+  <textarea  id="message" onkeyup="calculateSMSCOunt()" class="form-control" style="width: 400px;display: inline-block;height: 100px;" >
+  </textarea>
+<!--   <input type="text" id="message" onkeyup="calculateSMSCOunt()" class="form-control" style="width: 400px;display: inline-block;height: 100px;"/> -->
+  {{footer}}<input id="footer" type="hidden" value="{{footer}}"/>
+  <br/> Sms Count<span id="smsCount"></span>
+  <button type="submit"  onclick="sendSms()" id="sendSmsButton" class="btn btn-default" style="width: 100px;display: inline-block;">Send SMS</button>
+  <!-- <button type="submit"  ng-click="wipeAllStudentsMark()" class="btn btn-default" style="width: 100px;display: inline-block;">Reset</button> -->
+  
+  <span id="studentDataForSms" ></span>       
+ 
+</div>
+</div>
+

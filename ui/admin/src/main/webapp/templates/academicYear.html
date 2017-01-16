@@ -1,0 +1,19 @@
+<div ng-controller="academicYearCtrl" >
+
+<div class="container" >
+  <h2>Academic Year</h2>
+  <input type="text" ng-model="startDate" id="startDate" class="form-control"  placeholder="Start Date " style="width: 200px;display: inline-block;"/>
+  <input type="text" ng-model="endDate" id="endDate" class="form-control"  placeholder="End Date " style="width: 200px;display: inline-block;"/>
+  <select class="form-control" ng-model="academicYear" ng-options="item as item.academicYear for item in academicYearRes track by item.academicYearId" id="academicYearId" style="width: 300px;display: inline-block;">
+    <option value="">--Select Year--</option>
+  </select>  
+  <!-- <input type="text" ng-model="order"  class="form-control"  placeholder="Code" style="width: 50px;display: inline-block;"/> -->
+  <button type="submit"  ng-click="saveAcademicYear()" class="btn btn-default" style="width: 100px;display: inline-block;">Add</button>   
+  <span id="schoolAcademicYearData"></span>
+ 
+</div>
+
+
+
+</div>
+

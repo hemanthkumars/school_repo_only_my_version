@@ -1,0 +1,19 @@
+<div ng-controller="markingAttendanceCtrl">
+<div class="container">
+  <h2>Mark Attendance</h2>
+  <input type="text" ng-model="attendanceDate" ng-click="resetAttendanceSavingData()" ng-focus="resetAttendanceSavingData()" id="attendanceDate" class="form-control"  placeholder="dd-mm-yyyy" style="width: 150px;display: inline-block;"/>
+  <select class="form-control"  ng-change="resetAttendanceSavingData()"  ng-model="schoolSession"  id="schoolSession" ng-options="item as item.sessionName + ' ( ' + item.sessionTimings +' ) ' for item in schoolSessions track by item.schoolSessionId"  style="width: 180px;display: inline-block;">
+            <option value="">--Select Session--</option>
+   </select>
+   
+    <!-- <select ng-model="selectedItem">
+    <option value="">--Select Session--</option>
+        <option ng-repeat="item in schoolSessions" value="{{item.schoolSessionId}}">{{item.sessionName }} {{item.sessionTimings}}</option>
+      </select> -->
+   <input type="text"  ng-click="resetAttendanceSavingData()"  ng-model="classOrSectionForMarkAttendance" id="classOrSectionForMarkAttendance"  class="form-control"  placeholder="Start Typing.." style="width: 300px;display: inline-block;"/>
+  <button type="submit"   onclick="saveAttendance()" id="saveAttendanceButton" class="btn btn-default" style="width: 180px;display: inline-block;">Save Attendance</button>       
+  <span id="studentAttendanceData"></span>
+ 
+</div>
+</div>
+

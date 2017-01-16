@@ -1,0 +1,36 @@
+<div ng-controller="subjectDefnctrl">
+<div class="container">
+  <h2>Subject  Definition</h2>
+  <input type="text" ng-model="subjectName"  class="form-control"  placeholder="Subject Name" style="width: 300px;display: inline-block;"/>
+  <input type="text" ng-model="subjectCode"  class="form-control"  placeholder="Subject Code" style="width: 100px;display: inline-block;"/>
+  <!-- <input type="text" ng-model="order"  class="form-control"  placeholder="Code" style="width: 50px;display: inline-block;"/> -->
+  <button type="submit"  ng-click="saveSubjectDefn()" class="btn btn-default" style="width: 100px;display: inline-block;">Add</button>       
+  <span id="subjectData"></span>
+ 
+</div>
+
+<div id="subjectDefnModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Subject Edit</h4>
+      </div>
+      <div class="modal-body">
+         Subject Name<input type="text" id="subjectNameforEdit" class="form-control" style="width: 300px;display: inline-block;"/>
+         Subject Code<input type="text" id="subjectCodeforEdit" class="form-control" style="width: 100px;display: inline-block;"/>
+         <button type="submit"  ng-click="updateSubject()" class="btn btn-default" style="width: 100px;display: inline-block;">Save</button>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+

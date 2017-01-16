@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"> -->
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+<meta http-equiv="CACHE-CONTROL" content="NO-STORE"> 
+<title>School Software</title>
+ 
+ <script src="libs/angular.min.js"></script>
+ <script src="libs/angular-route.min.js"></script>
+ <script src="libs/angular-ui-router.min.js"></script>
+ 
+  <script src="libs/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <script src="libs/bootstrap.min.js"></script>
+
+ <script src="libs/alertify.min.js"></script>
+  <link rel="stylesheet" href="css/alertify.min.css">
+
+  <script src="js/routes.js"></script>
+  <!-- <script src="js/services.js"></script>
+  <script src="js/directives.js"></script> -->
+  
+  <script src="js/loginController.js"></script>
+  <script src="js/dashboardController.js"></script>
+  <script src="js/productController.js"></script>
+  <script src="js/salesController.js"></script>
+   <script src="js/menuController.js"></script>
+    <script src="js/studentMgmtController.js"></script>
+    <script src="js/classMasterDefnCtrl.js"></script>
+    <script src="js/academicYearController.js"></script>
+     <script src="js/subjectDefnController.js"></script>
+     <script src="js/holidayController.js"></script>
+     <script src="js/schoolSessionController.js"></script>
+     <script src="js/manageClassController.js"></script>
+      <script src="js/promotionController.js"></script>
+      <script src="js/birthdayController.js"></script>
+      <script src="js/promotionReportController.js"></script>
+      <script src="js/feeTypeMasterController.js"></script>
+        <script src="js/studentFeeDefnController.js"></script>
+         <script src="js/feeCollectController.js"></script>
+         <script src="js/viewfeeCollectionController.js"></script>
+         <script src="js/studentFeeDueListController.js"></script>
+         <script src="js/smsTemplate.js"></script>
+         <script src="js/studentSmsController.js"></script>
+          <script src="js/deliveryReport.js"></script>
+           <script src="js/smsByMobileNoController.js"></script>
+           <script src="js/markingAttendanceController.js"></script>
+        
+  
+  <script src="js/jquery-ui.js"></script>
+   <link rel="stylesheet" href="css/jquery-ui.css">
+   
+   <link rel="stylesheet" href="css/font-awesome.min.css">
+   <!-- <link rel="stylesheet" href="css/kendo.common.min.css" />
+    <link rel="stylesheet" href="css/kendo.default.min.css" />
+    <link rel="stylesheet" href="css/kendo.default.mobile.min.css" />
+   <script src="libs/kendo.all.min.js"></script> -->
+  
+  <script src="libs/app.js"></script>
+  
+  
+  <!-- <script src="js/disableReload.js"></script> -->
+
+</head>
+
+<body ng-app="app" >
+<!-- <div id="menuItems" style="display: none;"> 
+		<a ui-sref="login">Landing</a>
+		<a >Show Account</a>
+</div> -->
+<nav class="navbar navbar-default" id="menuGrid" style="display: none;" ng-controller="menuController">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/dashboard">DashBoard</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     
+     
+     
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Students <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"  ng-click="swithView('studentMgmt')">Manage Student</a></li>
+            <!-- <li><a href="#">Quick Update</a></li> -->
+            <li><a href="#" ng-click="swithView('birthdayList')">Birthday</a></li>
+             <li><a href="#" ng-click="swithView('promotion')">Promotion & Swapping</a></li>
+              <li><a href="#" ng-click="swithView('promotionReport')">Promotion Report</a></li>
+               <li><a href="#">Search Student</a></li>
+               <li><a href="#">Parent Credentials</a></li>
+                <li><a href="#">Envelope</a></li>
+                 <li><a href="#">Logged In Report</a></li>
+                 <!--  <li><a href="#">Class Swapping</a></li> -->
+                  <li><a href="#">Home Work</a></li>
+          <!--   <li role="separator" class="divider"></li> -->
+          </ul>
+        </li>
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Staff <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Manage Staff</a></li>
+            <li><a href="#">Attendance</a></li>
+            <li><a href="#">Absentees Report</a></li>
+             <li><a href="#">Login Credentials</a></li>
+              <li><a href="#">Birthday</a></li>
+          <!--   <li role="separator" class="divider"></li> -->
+          </ul>
+        </li>
+        
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Attendance <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+           <!--  <li><a href="#">Mass Attendance</a></li> -->
+            <li><a href="#" ng-click="swithView('markAttendance')">Mark Attendance</a></li>
+             <li><a href="#">Marking only Absentees</a></li>
+            <li><a href="#">Absentees List</a></li>
+             <li><a href="#">Leave Register</a></li>
+              <li><a href="#">Regular Absentees </a></li>
+               <li><a href="#">Attendance Report</a></li>
+                <li><a href="#">Annual Attendance Report</a></li>
+          <!--   <li role="separator" class="divider"></li> -->
+          </ul>
+        </li>
+        
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Classes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" ng-click="swithView('manageClass')">Manage Classes</a></li>
+            <li><a href="#" ng-click="swithView('subjectDefn')">Manage Subjects</a></li>
+            <li><a href="#">Class & Subject Mapping</a></li>
+             <li><a href="#">Subject & Teacher Mapping</a></li>
+          <!--   <li role="separator" class="divider"></li> -->
+          </ul>
+        </li>
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examination <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Manage Exam</a></li>
+            <li><a href="#">Grade Settings</a></li>
+            <li><a href="#">Schedule Examination</a></li>
+             <li><a href="#">Exam TimeTable</a></li>
+              <li><a href="#">Individual Hall Ticket</a></li>
+               <li><a href="#">Bulk Hall Ticket</a></li>
+               <li><a href="#">Mark Entry</a></li>
+                <li><a href="#">Individual Mark Sheet</a></li>
+                 <li><a href="#">Subject Wise Mark Sheet</a></li>
+          <!--   <li role="separator" class="divider"></li> -->
+          </ul>
+        </li>
+        
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fee <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" ng-click="swithView('feeCollect')">Fee Collect</a></li>
+            <li><a href="#" ng-click="swithView('feeTypeMaster')">Fee Type Definition</a></li>
+            <li><a href="#" ng-click="swithView('studentFeeDefinition')">Student Fee Definition</a></li>
+             <li><a href="#" ng-click="swithView('studentFeeDueList')">Due List</a></li>
+              <li><a href="#" ng-click="swithView('viewfeeCollection')">Date Wise Collection</a></li>
+          <!--   <li role="separator" class="divider"></li> -->
+          </ul>
+        </li>
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SMS <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" ng-click="swithView('studentSms')">Student  SMS</a></li>
+            <li><a href="#">Staff SMS</a></li>
+             <li><a href="#">Home Work SMS</a></li>
+               <li><a href="#" ng-click="swithView('smsByMobileNo')" >SMS by Mobile Nos</a></li>
+               <li><a href="#" ng-click="swithView('deliveryReport')">Delivery Report</a></li>
+          <!--   <li role="separator" class="divider"></li> -->
+          </ul>
+        </li>
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Master Settings <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" ng-click="swithView('schoolSetup')">School Setup</a></li>
+            <li><a href="#" ng-click="swithView('academicYear')">Academic Year</a></li>
+            <li><a href="#" ng-click="swithView('hoildayCalendar')">Holiday Calendar</a></li>
+            <li><a href="#" ng-click="swithView('schoolSessionDefn')">School Session</a></li>
+             <li><a href="#" ng-click="swithView('academicYear')">Grouping</a></li>
+              <li><a href="#" ng-click="swithView('classMasterDefinition')">Class Definition</a></li>
+               <li><a href="#" ng-click="swithView('subjectDefn')">Subject Definition</a></li>
+               <li><a href="#" ng-click="swithView('smsTemplate')">SMS Template</a></li>
+                <li><a href="#" ng-click="swithView('casteDefn')">Caste</a></li>
+                 <li><a href="#" ng-click="swithView('postionDefn')">Position</a></li>
+                  <li><a href="#" ng-click="swithView('prefixDefn')">Prefix</a></li>
+                 
+          <!--   <li role="separator" class="divider"></li> -->
+          </ul>
+        </li>
+      </ul>
+      <input type="button" style="width: 100px;" value="Log Out" ng-click="swithView('login')" class="form-control"/>
+      <input type="text" style="width: 300px;" placeholder="Menu Search..." class="form-control"/>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+  
+</nav>
+        <ui-view></ui-view>
+  
+
+</body>
+
+
+</html>

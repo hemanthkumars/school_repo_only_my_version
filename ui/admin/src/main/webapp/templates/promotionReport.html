@@ -1,0 +1,16 @@
+<div ng-controller="promoteReportCtrl">
+<div class="container">
+  <h2>Promotion Report  {{academicYears}}</h2>
+  From Academic
+  <select class="form-control" ng-model="fromAcademic" id="fromAcademic" ng-options="item as item.academicYear for item in academicYearRes track by item.academicYearId"  style="width: 150px;display: inline-block;">
+            <option value="">--Select From Year--</option>
+   </select>
+   To Academic
+   <select class="form-control" ng-model="toAcademic" id="toAcademic" ng-options="item as item.academicYear for item in academicYearRes track by item.academicYearId"  style="width: 150px;display: inline-block;">
+            <option value="">--Select To Year--</option>
+   </select>
+  <button type="submit"  ng-click="findPromotionReport()" class="btn btn-default" style="width: 100px;display: inline-block;">Get Details</button>
+ <span id="promotionReportData"></span>
+</div>
+</div>
+

@@ -1,0 +1,16 @@
+<div ng-controller="promotionCtrl" >
+<div class="container">
+  <h2>Promotion And Swapping</h2>
+  From Class <input type="text" ng-model="fromClassPromotion" ng-click="resetClassPromotion1()" id="fromClassPromotion" class="form-control"  placeholder="Start Typing..." style="width: 300px;display: inline-block;"/>
+   To Class  <input type="text" ng-model="toClassPromotion" ng-click="resetClassPromotion2()" id="toClassPromotion" class="form-control"  placeholder="Start Typing..." style="width: 300px;display: inline-block;"/>
+  <button type="submit"  onclick="promoteStudents()" class="btn btn-default" style="width: 150px;display: inline-block;">Promote</button>
+  <button type="submit"  onclick="passedOut123()" class="btn btn-default" style="width: 100px;display: inline-block;">Passed Out</button>
+  <button type="submit"  onclick="promoteStudents('swap')" class="btn btn-default" style="width: 100px;display: inline-block;">Swap</button>
+ <span id="studentFullDataPromotion"></span>
+</div>
+</div>
+
+
+
+
+

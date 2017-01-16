@@ -1,0 +1,159 @@
+<div style="margin-top: 1%; overflow: visible; height: 40%" ng-controller="salesController">
+<div>
+<form >
+<input  id="productCode" style="width: 50%;margin-left: 5%;display:inline-block;" type="text" placeholder="Enter Code" class="form-control" ng-blur="fetchProductFullDetails()" />
+<input id="nameInput" style="width: 50%;display:inline-block;margin-left: 5%;height: 30px; " type="text" placeholder="Type Name.." onclick="clearInput('nameInput')" onfocus="clearInput('nameInput')" />
+<input id="quantity" style="width: 5%;display:inline-block;margin-left: 5%; " value="1" type="text" placeholder="Quantity" class="form-control"/><br/>
+<button style="width: 5%;display: inline-block;margin-left: 5%;" class="form-control" ng-click="toggleInput(1)" value="Code" class=".btn-info">Code</button>
+<button style="width: 5%;display: inline-block;margin-left: 5%;" class="form-control" ng-click="toggleInput(2)" value="Name" class=".btn-info">Name</button>
+<input style="width: 5%;margin-left: 5%;" class="btn btn-primary" type="submit" value="Submit" ng-click="fetchProductFullDetails()"></input>
+</form>
+</div>
+<div id="soldProductsGrid" style="width: auto;height: 300px;border: thick;margin-left: 5%;margin-top: 2%;border-color: blue;overflow: auto;">
+<span id="productSannedContent"></span>
+
+</div>
+    <input type="button" onclick="PrintDiv();" value="Print" />
+    
+    <div id="dvContents" style = "border:1px dotted black;padding:5px;width:300px;display: none;" >
+        <span style="font-size: 10pt; font-weight: bold; font-family: Arial">Hello,
+            <br />
+            This is <span style="color: #18B5F0">Mudassar Khan</span>.<br />
+            Hoping that you are enjoying my articles!</span>
+    </div>
+ <div id="salesFooter" style="margin-bottom: 0px;margin-top:2%;float: right;width: 30%;margin-right: 20%">
+ <label class="control-label col-md-2" >Grand Total</label> <i class="fa fa-inr"></i><div  id="grandTotal" style="width: 208px; margin-left: 14%; display: inline-block; height: 52px; margin-bottom: 5%;font-size: 50px;font: bold; "   class="form-control"  ></div><br/>
+ <button style="width: 20%;display: inline-block;margin-left: 5%;" class="form-control"  value="Open" class=".btn-info" data-toggle="modal" data-target="#OpenSavedInvoiceModal">Open</button>
+ <button style="width: 20%;display: inline-block;margin-left: 5%;" class="form-control"  value="Save" class=".btn-info">Save</button>
+ <button style="width: 25%;display: inline-block;margin-left: 5%;" class="btn btn-primary"  value="Check Out"  onclick="openCheckOutModal()" >Check Out</button>
+ </div>
+  <div class="modal fade" id="productPriceModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select the Exact Product</h4>
+        </div>
+        <div class="modal-body">
+          <p></p>
+           <span id="productPriceDiv"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="modal fade" id="OpenSavedInvoiceModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select the Exact Product</h4>
+        </div>
+        <div class="modal-body">
+          <p></p>
+           <span id="savedIvoiceDiv"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="modal fade" id="productPriceUpdateModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><span id="productNameForUpdate"></span></h4>
+        </div>
+        <div class="modal-body">
+          <p></p>
+           <input type="text"  placeholder=""/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+ <div class="modal fade" id="settlementModal" role="dialog" ng-controller="salesController">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Settlement <span id="buyerDetailsDisplay"></span></h4>
+        </div>
+        <div class="modal-body">
+            <div class="btn-group" role="group" aria-label="...">
+ 				 <button type="button" onclick="addOrRemovePayment(1)" style="display: inline-block;cursor: pointer;" 
+ 				  class="btn btn-default">Add</button>
+  				<button type="button" onclick="addOrRemovePayment(2)" style="display: inline-block;cursor: pointer;" class="btn btn-default">Remove</button>
+ 				 <button type="button" onclick="openBuyerTagModal()" style="display: inline-block;cursor: pointer;" class="btn btn-primary">Tag Buyer</button>
+ 				 <div id="buyerDetails"></div>
+			</div>
+            
+            
+           <div id="settlementData"></div>
+           <input type="text" id="totalInvAmt"  class="form-control" disabled="disabled" placeholder="Total" style="display: inline-block;height: 50px;width: 150px;"/>
+           <input type="text" id="settledAmt"  class="form-control" disabled="disabled"  placeholder="Settled" style="display: inline-block;height: 50px;width: 150px;"/>
+           <input type="text" id="BalAmt"  class="form-control" disabled="disabled" placeholder="Balance" style="display: inline-block;height: 50px;width: 150px;"/>
+           <button style="width: 25%;" class="btn btn-primary"  ng-click="payInvoice()" value="Check Out" data-toggle="modal" data-target="#settlementModal">Pay & Print</button>
+          <!--   <div id="addBuyer">
+           <input type="text" id="buyerMobile"  class="form-control" placeholder="10 Digit Mobile No" />
+           <input type="text" id="buyerEmail"  class="form-control" placeholder="Email"/>
+           <input type="text" id="buyerName"  class="form-control" placeholder="Name" />
+            <button style="width: 25%;" class="btn btn-primary"  ng-click="payInvoice()" value="Check Out" data-toggle="modal" data-target="#settlementModal">Save Buyer</button>
+            </div> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="modal fade" id="buyerTag" role="dialog" ng-controller="salesController">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Enter Buyer Details</h4>
+        </div>
+        <div class="modal-body">
+           <input type="text" id="mobileNo"  class="form-control"  placeholder="10 Digit Mobile *" style="height: 50px;width: 500px;display: inline-block;" onblur="fetchBuyer()"/>
+           <button type="button" class="btn btn-default btn-lg" ng-click="fetchBuyer()" >
+        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+           </button>
+           <input type="text" id="buyerName"  class="form-control"  placeholder="Name *" style="height: 50px;width: 500px;display: none;"/>
+            <input type="text" id="buyerEmail"  class="form-control"  placeholder="Email Id" style="height: 50px;width: 500px;display: none;"/>
+           
+           <button  id="saveBuyerButton" style="width: 25%;margin-left: 10px;display: none;" class="btn btn-primary"  ng-click="saveBuyer()" value="Tag Buyer" data-toggle="modal" data-target="#buyerTag">Tag Buyer</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  
+  
+  
+
+

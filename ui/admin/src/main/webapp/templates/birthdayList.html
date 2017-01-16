@@ -1,0 +1,25 @@
+<div ng-controller="birthdayCtrl">
+<div class="container">
+  <h2>BirthDay List</h2>
+  Month<select class="form-control"  id="month"    style="width: 180px;display: inline-block;" onchange="findBirthDayList()">
+            <option value="">--Select month--</option>
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+         </select>
+   <button type="submit"  onclick="printDiv('studentBirthDayList')" class="btn btn-default" style="width: 150px;display: inline-block;">Print</button>
+         
+ <span id="studentBirthDayList"></span>
+ 
+ </div>
+</div>
+

@@ -1,0 +1,16 @@
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-12-27 20:01:16
+project --topLevelPackage com.school --projectName school --java 7 --packaging POM
+module create --moduleName base --topLevelPackage com.school.base
+module focus --moduleName ~
+module create --moduleName ui --topLevelPackage com.school.ui --packaging POM
+module create --moduleName admin --topLevelPackage com.school.ui.admin
+module focus --moduleName base
+osgi start --url file:///C:/Users/Hemu/.m2/repository/mysql/mysql-connector-java/5.1.18/mysql-connector-java-5.1.18.jar
+persistence setup --provider HIBERNATE --database MYSQL
+database reverse engineer --schema school --package ~.domain --testAutomatically
+json all
+module focus --moduleName ui\admin
+web mvc setup
+controller scaffold  --entity base|~.domain.Student --class ~.controller.StudentController
+exit
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-12-27 20:05:56

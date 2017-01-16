@@ -1,0 +1,14 @@
+<div ng-controller="feeTypeMasterCtrl">
+<div class="container">
+  <h2>FeeType Master Definition</h2>
+   Fee Type<input type="text" ng-model="feeType"  class="form-control"  placeholder="Enter Fee Type"  style="width: 300px;display: inline-block;"/>
+   Is ConcessionType<select class="form-control" ng-model="isConsessionType" id="isConsessionType"   style="width: 120px;display: inline-block;">
+            <option value="0">No</option>
+            <option value="01">Yes</option>
+    </select>
+  <button type="submit"  ng-click="saveFeeTypeMaster()" class="btn btn-default" style="width: 100px;display: inline-block;">Add</button>       
+  <span id="feeTypeMaster"></span>
+ 
+</div>
+</div>
+

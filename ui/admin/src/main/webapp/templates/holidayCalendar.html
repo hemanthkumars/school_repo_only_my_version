@@ -1,0 +1,15 @@
+<div ng-controller="holidaydayctrl">
+
+<div class="container">
+  <h2>Holiday Calendar for {{currentYear}} AcademicYear</h2>
+  <input type="text" ng-model="holidayDate"  id="holidayDate" class="form-control"  placeholder="Date of Holiday" style="width: 150px;display: inline-block;"/>
+  <select class="form-control"  id="schoolSessionId" ng-model="schoolSession" ng-options="item as item.sessionName for item in schoolSessions track by item.schoolSessionId" style="width: 200px;display: inline-block;">
+    <option value="">--Select Session--</option>
+  </select> 
+  <input type="text" ng-model="reason"  class="form-control"  placeholder="Reason.." style="width: 300px;display: inline-block;"/>
+  <button type="submit"  ng-click="saveHoliday()" class="btn btn-default" style="width: 100px;display: inline-block;">Add</button>       
+  <span id="holidayData"></span>
+ 
+</div>
+</div>
+

@@ -1,0 +1,129 @@
+<div ng-controller="studentMgmtCtrl">
+<div class="container">
+  <h2>Students List</h2>
+  Class <input type="text" ng-model="schoolClassSection" ng-click="resetClassSectionData()" id="schoolClassSection" class="form-control"  placeholder="Start Typing..." style="width: 300px;display: inline-block;"/>
+  <input type="hidden" id="schoolClassSectionId" value=""/>
+  <button type="submit"  onclick="openStudentModalForEdition()" class="btn btn-default" style="width: 150px;display: inline-block;">Admit New Student</button> 
+  <h3>{{schoolClassSectionHeading}}</h3>
+  <span id="studentFullData"></span>
+   <input type="hidden" id="studentId" value="0"/>
+</div>
+
+<div id="studentAddEditModal" class="modal fade" role="dialog"> 
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{studentNameHeading}}{{admissionNo}}</h4>
+      </div>
+      <div class="modal-body">
+  <h2>Student Details</h2>
+  <div class="panel-group" id="studentDataAccordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a    style="cursor: pointer;" ng-click="openAccordion('studentInfodiv')">Student Information</a>
+        </h4>
+      </div>
+      <div id="studentInfodiv" class="panel-collapse collapse in">
+        <div class="panel-body">
+        Student Name <input type="text" ng-model="studentFirstName" id="studentFirstName" class="form-control"  placeholder="Enter Student Name" style="width: 300px;display: inline-block;"/>
+         		
+      	Gender<select class="form-control" ng-model="gender"  id="gender"  ng-options="item as item.gender for item in genders track by item.genderId"  style="width: 80px;display: inline-block;">
+            <option value="">--Gender--</option>
+         </select>
+   		<!--  Admission Date <input type="text" ng-model="admissionDate" id="admissionDate"  class="form-control"  placeholder="dd-MM-yyyy" style="width: 150px;display: inline-block;"/> -->
+   		 Date Of Birth <input type="text" ng-model="dob" id="dob"  class="form-control"  placeholder="dd-MM-yyyy" style="width: 150px;display: inline-block;"/>
+   		 Admission No : <input type="text" ng-model="admissionNo" id="admissionNo" disabled="disabled" class="form-control"   style="width: 100px;display: inline-block;"/>
+   		 <br/>
+   		 <select class="form-control" ng-model="bloodGroup"  id="bloodGroup"  ng-options="item as item.bloodGroup for item in bloodGroups track by item.bloodGroupId" style="width: 120px;display: inline-block;">
+            <option value="">--Blood Group--</option>
+         </select>
+         <select class="form-control" ng-model="motherTongue"  id="motherTongue" ng-options="item as item.language for item in languages track by item.languageId"  style="width: 120px;display: inline-block;">
+            <option value="">--Mother Tongue--</option>
+         </select>
+         <select class="form-control" ng-model="caste"  id="caste" ng-options="item as item.casteName for item in castes track by item.casteId" style="width: 120px;display: inline-block;">
+            <option value="">--Caste--</option>
+         </select>
+         <select class="form-control" ng-model="religion" id="religion" ng-options="item as item.religion for item in religions track by item.religionId"  style="width: 120px;display: inline-block;">
+            <option value="">--Religion--</option>
+         </select>
+   		 <br/>
+   		 Identification Mark<input type="text" ng-model="identificationMark" id="identificationMark" class="form-control"  placeholder="Identification Mark If any" style="width: 300px;"/>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a style="cursor: pointer;" ng-click="openAccordion('parentInfoDiv')">Parent's Information</a>
+        </h4>
+      </div>
+      <div id="parentInfoDiv" class="panel-collapse collapse">
+        <div class="panel-body">
+       Father's Name <input type="text" ng-model="fatherName" id="fatherName" class="form-control"  placeholder="Enter Father Name" style="width: 100px;display: inline-block;" />
+       Father's Occupation <input type="text" ng-model="fatherOccupation" id="fatherOccupation"  class="form-control"  placeholder="Enter Occupation" style="width: 100px;display: inline-block;" />
+       Mother's Name <input type="text" ng-model="motherName" id="motherName" class="form-control"  placeholder="Enter Mother Name" style="width: 100px;display: inline-block;" />
+       Mother's Occupation <input type="text" ng-model="motherOccupation" id="motherOccupation" class="form-control"  placeholder="Enter Occupation" style="width: 100px;display: inline-block;" />
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a style="cursor: pointer;" ng-click="openAccordion('communiInfoDiv')">Communication Information</a>
+        </h4>
+      </div>
+      <div id="communiInfoDiv" class="panel-collapse collapse">
+        <div class="panel-body">
+       Father's Mobile No <input type="text" ng-model="fatherMobile" id="fatherMobile" class="form-control"  placeholder="Enter 10 Digit Mobile No" style="width: 100px;display: inline-block;"  maxlength="10"/>
+       Father's Email <input type="text" ng-model="fatherEmail" id="fatherEmail" class="form-control"  placeholder="Enter Email" style="width: 100px;display: inline-block;" />
+       Mother's Mobile No <input type="text" ng-model="motherMobile" id="motherMobile"  class="form-control"  placeholder="Enter 10 Digit Mobile No" style="width: 100px;display: inline-block;"  maxlength="10"/>
+       Mother's Email <input type="text" ng-model="motherEmail"  id="motherEmail" class="form-control"  placeholder="Enter Email" style="width: 100px;display: inline-block;" />
+ 
+        </div>
+      </div>
+    </div>
+    
+     <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a style="cursor: pointer;" ng-click="openAccordion('addressInfoDiv')">Address Information</a>
+        </h4>
+      </div>
+      <div id="addressInfoDiv" class="panel-collapse collapse">
+        <div class="panel-body">
+       Address <input type="text" ng-model="address" id="address" class="form-control"  placeholder="Enter Address.." style="width: 500px;display: inline-block;" /><br/>
+       Landmark <input type="text" ng-model="landmark"  id="landmark" class="form-control"  placeholder="Enter Landmark" style="width: 100px;" />
+       City
+       <select class="form-control" ng-model="city" id="city" ng-options="item as item.city for item in cities track by item.cityId"  style="width: 100px;display: inline-block;">
+            <option value="">--Select City--</option>
+         </select>
+       State
+        <select class="form-control" ng-model="state" id="state" ng-options="item as item.state for item in states track by item.stateId"  style="width: 100px;display: inline-block;">
+            <option value="">--Select State--</option>
+         </select>
+        Pincode<input type="text" ng-model="pincode" id="pincode" class="form-control"  placeholder="Pincode" style="width: 100px;display: inline-block;" />
+        Country
+         <select class="form-control" ng-model="country" id="country"  ng-options="item as item.country for item in countries track by item.countryId"  style="width: 100px;display: inline-block;">
+            <option value="">--Select Country--</option>
+         </select>
+        </div>
+      </div>
+    </div>
+  </div> 
+<center><button type="submit"  ng-click="saveStudentData()" class="btn btn-default" style="width: 100px;display: inline-block;"  >Save</button></center>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
